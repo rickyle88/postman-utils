@@ -5,6 +5,8 @@ if (typeof PMUtil === "undefined") {
         let self = this;
         let debug = false;
         let logs = [];
+        
+        let temp = "Hello";
 
         const uuidv4 = require('uuid').v4;
 
