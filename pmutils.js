@@ -7,6 +7,13 @@ if (typeof PMUtil === "undefined") {
         let logs = [];
         
         let temp = "Hello";
+        
+        function makeid2(length) {
+            let v = Math.random().toString(16).slice(2);
+            while (v.length < length) 
+                v += Math.random().toString(16).slice(2);
+            return v.slice(-length)
+        }
 
         const uuidv4 = require('uuid').v4;
 
