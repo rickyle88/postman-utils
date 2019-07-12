@@ -13,7 +13,7 @@ if (typeof PMUtil === "undefined") {
             while (v.length < length) 
                 v += Math.random().toString(16).slice(2);
             return v.slice(-length)
-        }
+        };
 
         const uuidv4 = require('uuid').v4;
 
