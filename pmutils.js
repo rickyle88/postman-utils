@@ -48,14 +48,49 @@
     // PMUtils Object
     return Object.freeze({
         
-        makeLeadId1: function(length) {
-            let result           = '';
-            let characters       = 'abcdef0123456789';
+        /**
+         * Generates a random lead ID
+         * @param {string|number}  stringLength - the length of the random string    
+         * @return string
+         */
+        makeLeadId: function (length) {
+            let result = '';
+            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let charactersLength = characters.length;
-            for ( var i = 0; i < length; i++ ) {
+            for (var i = 0; i < length; i++) {
                 result += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
             return result;
+        },
+
+        /**
+         * Generates a random hexadecimal for lead ID
+         * @param {string|number}  stringLength - the length of the random string    
+         * @return string
+         */
+
+        makeLeadIdHex1: function (length) {
+            let v = Math.random().toString(16).slice(2); 
+            while (v.length < length) 
+                v += Math.random().toString(16).slice(2); 
+            return v.slice(-length)
+        },
+
+        /**
+         * Generates a random hexadecimal for lead ID
+         * @param {string|number}  stringLength - the length of the random string    
+         * @return string
+         */
+
+        makeLeadIdHex2: function (length) {
+            return [Math.random(),Math.random()]
+                        .map(function(v){
+                            if (v === 0)
+                                v = Math.random();
+                            return v.toString(16).slice(2)
+                        })
+                        .join('')
+                        .slice(-length);
         },
         
         /**
