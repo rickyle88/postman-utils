@@ -8,7 +8,7 @@ if (typeof PMUtil === "undefined") {
         
         let temp = "Hello";
         
-        this.makeid2 = function(length) {
+        this.makeid2 = (length) => {
             let v = Math.random().toString(16).slice(2);
             while (v.length < length) 
                 v += Math.random().toString(16).slice(2);
