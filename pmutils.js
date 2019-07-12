@@ -47,6 +47,17 @@
 
     // PMUtils Object
     return Object.freeze({
+        
+        makeLeadId1: function(length) {
+            let result           = '';
+            let characters       = 'abcdef0123456789';
+            let charactersLength = characters.length;
+            for ( var i = 0; i < length; i++ ) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        },
+        
         /**
          * Generates a random string based on the given amount of characters
          * @param {string|number}  stringLength - the length of the random string    
